@@ -58,6 +58,7 @@ class Catastro(object):
         else:
             params['Municipio'] = ''
         url = home_url + "OVCCallejero.asmx/ConsultaMunicipio"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -92,6 +93,7 @@ class Catastro(object):
         else:
             params['NombreVia'] = ''
         url = home_url + "OVCCallejero.asmx/ConsultaVia"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -129,6 +131,7 @@ class Catastro(object):
             'Numero': str(numero)
         }
         url = home_url + "OVCCallejero.asmx/ConsultaNumero"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -243,6 +246,7 @@ class Catastro(object):
             'Parcela': parcela
         }
         url = home_url + "OVCCallejero.asmx/Consulta_DNPPP"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -261,6 +265,7 @@ class Catastro(object):
         """
 
         url = home_url + "OVCCallejero.asmx/ConsultaProvincia"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -288,6 +293,7 @@ class Catastro(object):
 
         params = {"Provincia": provincia, "Municipio": municipio}
         url = home_url + "OVCCallejero.asmx/ConsultaMunicipio"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -329,6 +335,7 @@ class Catastro(object):
         else:
             params['TipoVia'] = ''
         url = home_url + "OVCCallejero.asmx/ConsultaVia"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -366,6 +373,7 @@ class Catastro(object):
             'Numero': numero
         }
         url = home_url + "OVCCallejero.asmx/ConsultaVia"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -430,6 +438,7 @@ class Catastro(object):
             params['Escalera'] = ''
 
         url = home_url + "OVCSWLocalizacionRC/OVCCallejero.asmx/Consulta_DNPLOC"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -454,6 +463,7 @@ class Catastro(object):
 
         params = {'Provincia': provincia, 'Municipio': municipio, 'RC': rc}
         url = home_url + "OVCCallejero.asmx/Consulta_DNPRC"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -484,6 +494,7 @@ class Catastro(object):
             "Parcela": parcela
         }
         url = home_url + "OVCCallejero.asmx/Consulta_DNPPP"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -513,6 +524,7 @@ class Catastro(object):
         else:
             params["SRS"] = "EPSG:" + str(srs)
         url = home_url + "OVCCoordenadas.asmx?op=Consulta_RCCOOR"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -545,6 +557,7 @@ class Catastro(object):
         else:
             params['SRS'] = "EPSG:" + str(srs)
         url = home_url + "OVCCoordenadas.asmx/Consulta_RCCOOR_Distancia"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
@@ -577,6 +590,7 @@ class Catastro(object):
             'RC': rc
         }
         url = home_url + "OVCCoordenadas.asmx/Consulta_CPMRC"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
