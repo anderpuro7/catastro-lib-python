@@ -27,6 +27,7 @@ class Catastro(object):
         """
 
         url = home_url + "OVCCallejero.asmx/ConsultaProvincia"
+        response = requests.get(url, params=params)
         salida_json = json.dumps(
             xmltodict.parse(
                 response.content, process_namespaces=False, xml_attribs=False),
